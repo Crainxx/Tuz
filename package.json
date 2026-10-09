@@ -1,0 +1,8 @@
+{
+  "name": "tapak-store",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": { "dev": "netlify dev" },
+  "dependencies": { "@netlify/blobs": "^8.1.0" }
+}
