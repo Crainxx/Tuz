@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tapak. — sepatu & sendal buat kaki yang banyak gaya</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👟</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1a1033;--paper:#f1ecff;--pink:#ff4fa3;--lime:#d6ff3d;--sky:#6ec9ff;--violet:#9b7bff;--f:"Bricolage Grotesque",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--paper);color:var(--ink);overflow-x:hidden;line-height:1.4}
+button,input,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.bx{border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:12px 5vw;background:var(--paper);border-bottom:3px solid var(--ink)}
+.logo{font-weight:800;font-size:1.8rem;letter-spacing:-.05em}
+.logo i{color:var(--pink);font-style:normal}
+.bag{background:var(--lime);border-radius:99px;padding:8px 18px;font-weight:700;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.bag:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+
+/* hero */
+.hero{position:relative;padding:8vh 5vw 10vh;min-height:78vh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.hero h1{font-size:clamp(3.4rem,15vw,11rem);line-height:.82;letter-spacing:-.06em;font-weight:800;position:relative;z-index:2}
+.hero h1 span{display:block}
+.hero h1 span:nth-child(2){margin-left:8vw;-webkit-text-stroke:3px var(--ink);color:transparent}
+.hero p{max-width:30ch;font-size:1.2rem;margin:28px 0 24px;position:relative;z-index:2;font-weight:500}
+.cta{display:inline-block;background:var(--pink);color:#fff;font-weight:800;font-size:1.1rem;padding:14px 28px;border-radius:99px;text-decoration:none;position:relative;z-index:2;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .15s}
+.cta:hover{transform:translate(-2px,-2px) rotate(-2deg)}
+.blob{position:absolute;z-index:1}
+.b1{width:46vw;max-width:520px;aspect-ratio:1;right:-8vw;top:6vh;background:var(--violet);border-radius:62% 38% 55% 45%/48% 60% 40% 52%;border:3px solid var(--ink)}
+.b2{width:20vw;min-width:110px;max-width:200px;aspect-ratio:1;right:22vw;bottom:6vh;background:var(--lime);border-radius:50%;border:3px solid var(--ink)}
+.b3{right:6vw;bottom:8vh;width:min(26vw,220px)}
+.sticker{position:absolute;z-index:3;right:5vw;top:5vh;width:min(30vw,170px);aspect-ratio:1;display:grid;place-items:center;text-align:center;background:var(--sky);border-radius:50%;border:3px solid var(--ink);font-weight:800;line-height:1;font-size:clamp(.9rem,3vw,1.3rem);transform:rotate(12deg);animation:spin 14s linear infinite}
+@keyframes spin{to{transform:rotate(372deg)}}
+
+/* marquee */
+.mq{background:var(--ink);color:var(--paper);border-block:3px solid var(--ink);overflow:hidden;white-space:nowrap;padding:12px 0;font-weight:800;font-size:1.3rem}
+.mq div{display:inline-block;animation:mq 22s linear infinite}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* shop */
+.shop{padding:9vh 5vw}
+.shop h2{font-size:clamp(2.4rem,8vw,5rem);letter-spacing:-.05em;line-height:.9;margin-bottom:22px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:34px}
+.chip{background:#fff;border:3px solid var(--ink);border-radius:99px;padding:8px 20px;font-weight:700}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--lime)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:34px 26px}
+.card{background:#fff;border-radius:26px;overflow:hidden;display:flex;flex-direction:column}
+.card:nth-child(3n+1){transform:rotate(-1.4deg)}
+.card:nth-child(3n+2){transform:translateY(14px) rotate(.8deg)}
+.card:nth-child(3n){transform:rotate(1.6deg)}
+.pic{position:relative;aspect-ratio:1.15;display:grid;place-items:center;border-bottom:3px solid var(--ink)}
+.pic svg{width:82%;filter:drop-shadow(4px 5px 0 rgba(26,16,51,.9))}
+.tag{position:absolute;left:12px;top:12px;background:var(--lime);border:2px solid var(--ink);border-radius:99px;padding:2px 12px;font-weight:700;font-size:.85rem}
+.tag.low{background:var(--pink);color:#fff}
+.info{padding:16px;display:flex;flex-direction:column;gap:12px;flex:1}
+.info h3{font-size:1.4rem;letter-spacing:-.03em;line-height:1.05}
+.price{font-weight:800;font-size:1.2rem}
+.sizes{display:flex;gap:6px;flex-wrap:wrap}
+.sz{min-width:38px;height:34px;border:2px solid var(--ink);border-radius:10px;background:#fff;font-weight:700;font-size:.9rem}
+.sz[aria-pressed=true]{background:var(--violet);color:#fff}
+.add{margin-top:auto;background:var(--ink);color:#fff;border:0;border-radius:14px;padding:12px;font-weight:700}
+.add:disabled{opacity:.4;cursor:not-allowed}
+.add:not(:disabled):hover{background:var(--pink)}
+.state{padding:40px 0;font-weight:700;font-size:1.2rem}
+
+/* drawer */
+.veil{position:fixed;inset:0;background:rgba(26,16,51,.55);z-index:30;opacity:0;pointer-events:none;transition:opacity .2s}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:var(--paper);z-index:31;border-left:3px solid var(--ink);transform:translateX(100%);transition:transform .25s;display:flex;flex-direction:column}
+body.open .veil{opacity:1;pointer-events:auto}
+body.open .drawer{transform:none}
+.dh{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;border-bottom:3px solid var(--ink)}
+.dh h2{font-size:1.6rem;letter-spacing:-.04em}
+.x{background:#fff;border:3px solid var(--ink);border-radius:50%;width:40px;height:40px;font-weight:800}
+.dbody{flex:1;overflow:auto;padding:16px 20px}
+.line{display:grid;grid-template-columns:1fr auto;gap:4px 10px;padding:12px 0;border-bottom:2px dashed var(--ink)}
+.line small{grid-column:1;opacity:.75}
+.qty{display:flex;gap:8px;align-items:center;font-weight:700}
+.qty button{width:28px;height:28px;border-radius:8px;border:2px solid var(--ink);background:#fff;font-weight:800}
+.tot{display:flex;justify-content:space-between;font-weight:800;font-size:1.3rem;padding:14px 0}
+form{display:grid;gap:10px}
+label{font-weight:700;font-size:.9rem;display:grid;gap:4px}
+input,textarea{border:3px solid var(--ink);border-radius:12px;padding:10px 12px;background:#fff;width:100%}
+.hp{position:absolute;left:-9999px}
+.go{background:var(--pink);color:#fff;border:3px solid var(--ink);border-radius:14px;padding:14px;font-weight:800;font-size:1.05rem;box-shadow:4px 4px 0 var(--ink)}
+.go:disabled{opacity:.5}
+.err{color:#c0123f;font-weight:700;min-height:1.2em}
+.done{text-align:center;padding:30px 0}
+.done b{display:inline-block;background:var(--lime);border:3px solid var(--ink);padding:6px 16px;border-radius:12px;font-size:1.4rem;margin:12px 0}
+footer{padding:40px 5vw;border-top:3px solid var(--ink);font-weight:600}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<nav>
+  <a class="logo" href="#" style="text-decoration:none;color:inherit">tapak<i>.</i></a>
+  <button class="bag" id="openBag">Tas (<span id="count">0</span>)</button>
+</nav>
+
+<header class="hero">
+  <div class="blob b1"></div><div class="blob b2"></div>
+  <svg class="blob b3" viewBox="0 0 200 120" aria-hidden="true"><path d="M5 60 Q30 5 55 60 T105 60 T155 60 T200 60" fill="none" stroke="#1a1033" stroke-width="12" stroke-linecap="round"/></svg>
+  <div class="sticker">drop 01<br>stok<br>terbatas</div>
+  <h1><span>kaki lo</span><span>butuh</span><span>drama.</span></h1>
+  <p>Sepatu dan sendal buat jalan santai, nongkrong, sampai pura-pura sibuk.</p>
+  <a class="cta" href="#shop">Cek koleksi</a>
+</header>
+
+<div class="mq" aria-hidden="true"><div id="mq"></div></div>
+
+<main class="shop" id="shop">
+  <h2>Pilih yang<br>paling lo banget.</h2>
+  <div class="chips" id="chips">
+    <button class="chip" data-t="all" aria-pressed="true">Semua</button>
+    <button class="chip" data-t="sepatu" aria-pressed="false">Sepatu</button>
+    <button class="chip" data-t="sendal" aria-pressed="false">Sendal</button>
+  </div>
+  <div class="grid" id="grid"><p class="state">Lagi ngambil koleksi…</p></div>
+</main>
+
+<footer>tapak. — dibuat buat test. Pesanan masuk ke database Netlify Blobs.</footer>
+
+<div class="veil" id="veil"></div>
+<aside class="drawer" id="drawer" aria-label="Tas belanja">
+  <div class="dh"><h2>Tas lo</h2><button class="x" id="close" aria-label="Tutup tas">✕</button></div>
+  <div class="dbody" id="dbody"></div>
+</aside>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const rp = (n) => "Rp" + n.toLocaleString("id-ID");
+const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+let products = [], filter = "all", cart = [], picked = {}, view = "cart", busy = false, errMsg = "";
+try { cart = JSON.parse(localStorage.getItem("tapak-cart") || "[]"); } catch {}
+const save = () => { try { localStorage.setItem("tapak-cart", JSON.stringify(cart)); } catch {} };
+
+$("#mq").innerHTML = Array(12).fill("jalan terus ✦ jangan kepo ✦ ").join("");
+
+const shoe = (a, b, type) => type === "sepatu"
+  ? `<svg viewBox="0 0 200 120"><path d="M10 88C10 62 32 57 56 52L76 30c10-5 20 10 36 16 28 8 78 14 78 42z" fill="${a}" stroke="#1a1033" stroke-width="4"/><rect x="8" y="86" width="184" height="20" rx="10" fill="${b}" stroke="#1a1033" stroke-width="4"/><path d="M82 40l14 14M94 36l14 14" stroke="#1a1033" stroke-width="5" stroke-linecap="round"/></svg>`
+  : `<svg viewBox="0 0 200 120"><rect x="8" y="78" width="184" height="24" rx="12" fill="${b}" stroke="#1a1033" stroke-width="4"/><path d="M48 78C58 34 126 34 138 78" fill="none" stroke="#1a1033" stroke-width="22" stroke-linecap="round"/><path d="M48 78C58 34 126 34 138 78" fill="none" stroke="${a}" stroke-width="12" stroke-linecap="round"/></svg>`;
+
+async function load() {
+  try {
+    const r = await fetch("/api/products");
+    if (!r.ok) throw 0;
+    products = await r.json();
+    renderGrid();
+  } catch {
+    $("#grid").innerHTML = '<p class="state">Koleksi gagal dimuat. Coba refresh ya.</p>';
+  }
+}
+
+function renderGrid() {
+  const list = products.filter((p) => filter === "all" || p.type === filter);
+  $("#grid").innerHTML = list.map((p) => {
+    const out = p.stock < 1, sel = picked[p.id];
+    return `<article class="card bx">
+      <div class="pic" style="background:${p.colors[0]}33">
+        <span class="tag ${p.stock < 6 ? "low" : ""}">${out ? "Habis" : p.stock < 6 ? "Sisa " + p.stock : p.type}</span>
+        ${shoe(p.colors[0], p.colors[1], p.type)}
+      </div>
+      <div class="info">
+        <h3>${esc(p.name)}</h3><div class="price">${rp(p.price)}</div>
+        <div class="sizes" role="group" aria-label="Ukuran ${esc(p.name)}">
+          ${p.sizes.map((s) => `<button class="sz" data-id="${p.id}" data-s="${s}" aria-pressed="${sel === s}">${s}</button>`).join("")}
+        </div>
+        <button class="add" data-add="${p.id}" ${out ? "disabled" : ""}>${out ? "Stok habis" : "Masukin tas"}</button>
+      </div></article>`;
+  }).join("") || '<p class="state">Belum ada produk di kategori ini.</p>';
+}
+
+$("#chips").onclick = (e) => {
+  const b = e.target.closest(".chip"); if (!b) return;
+  filter = b.dataset.t;
+  document.querySelectorAll(".chip").forEach((c) => c.setAttribute("aria-pressed", c === b));
+  renderGrid();
+};
+
+$("#grid").onclick = (e) => {
+  const s = e.target.closest(".sz");
+  if (s) { picked[s.dataset.id] = s.dataset.s; renderGrid(); return; }
+  const a = e.target.closest("[data-add]"); if (!a) return;
+  const id = a.dataset.add, size = picked[id];
+  if (!size) { a.textContent = "Pilih ukuran dulu"; setTimeout(() => (a.textContent = "Masukin tas"), 1400); return; }
+  const ex = cart.find((c) => c.id === id && c.size === size);
+  ex ? (ex.qty = Math.min(5, ex.qty + 1)) : cart.push({ id, size, qty: 1 });
+  save(); view = "cart"; renderCart(); toggle(true);
+};
+
+const toggle = (o) => document.body.classList.toggle("open", o);
+$("#openBag").onclick = () => { view = cart.length || view !== "done" ? view : "cart"; renderCart(); toggle(true); };
+$("#close").onclick = $("#veil").onclick = () => { if (view === "done") view = "cart"; toggle(false); };
+
+function renderCart() {
+  $("#count").textContent = cart.reduce((n, c) => n + c.qty, 0);
+  const d = $("#dbody");
+  if (view === "done") return;
+  if (!cart.length) { d.innerHTML = '<p class="state">Tas lo masih kosong. Isi dulu yuk.</p>'; return; }
+  const rows = cart.map((c, i) => {
+    const p = products.find((x) => x.id === c.id) || { name: c.id, price: 0 };
+    return `<div class="line"><b>${esc(p.name)}</b><span>${rp(p.price * c.qty)}</span>
+      <small>Ukuran ${esc(c.size)}</small>
+      <div class="qty"><button data-q="${i}" data-d="-1" aria-label="Kurangi">−</button>${c.qty}<button data-q="${i}" data-d="1" aria-label="Tambah">+</button></div></div>`;
+  }).join("");
+  const total = cart.reduce((s, c) => s + (products.find((x) => x.id === c.id)?.price || 0) * c.qty, 0);
+  d.innerHTML = rows + `<div class="tot"><span>Total</span><span>${rp(total)}</span></div>
+  <form id="f" novalidate>
+    <label>Nama<input name="name" autocomplete="name" required></label>
+    <label>No. WhatsApp<input name="phone" type="tel" autocomplete="tel" placeholder="08xxxxxxxxxx" required></label>
+    <label>Alamat lengkap<textarea name="address" rows="3" autocomplete="street-address" required></textarea></label>
+    <label>Catatan (opsional)<input name="note"></label>
+    <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <div class="err" id="err" role="alert">${esc(errMsg)}</div>
+    <button class="go" id="go" ${busy ? "disabled" : ""}>${busy ? "Lagi ngirim…" : "Pesan sekarang"}</button>
+  </form>`;
+}
+
+$("#dbody").onclick = (e) => {
+  const q = e.target.closest("[data-q]"); if (!q) return;
+  const c = cart[+q.dataset.q]; c.qty += +q.dataset.d;
+  if (c.qty < 1) cart.splice(+q.dataset.q, 1); else c.qty = Math.min(5, c.qty);
+  save(); renderCart();
+};
+
+$("#dbody").onsubmit = async (e) => {
+  e.preventDefault(); if (busy) return;
+  const f = Object.fromEntries(new FormData(e.target));
+  busy = true; errMsg = ""; renderCart();
+  const keep = f; // jaga isian kalau gagal
+  try {
+    const r = await fetch("/api/orders", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ ...f, items: cart }) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || "Gagal memesan");
+    cart = []; save(); view = "done"; busy = false;
+    $("#count").textContent = 0;
+    $("#dbody").innerHTML = `<div class="done"><h2>Pesanan masuk!</h2><b>${esc(j.id)}</b><p>Total ${rp(j.total)}. Simpan kode ini, kami hubungi lewat WhatsApp.</p></div>`;
+    load();
+  } catch (x) {
+    busy = false; errMsg = x.message; renderCart();
+    const form = $("#f"); if (form) for (const k in keep) if (form.elements[k]) form.elements[k].value = keep[k];
+  }
+};
+
+renderCart(); load();
+</script>
+</body>
+</html>
